@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -13,6 +14,7 @@ import AdminUsers from "./pages/admin/AdminUsers";
 import AdminItems from "./pages/admin/AdminItems";
 import AdminReports from "./pages/admin/AdminReports";
 import ClaimsReceived from "./pages/ClaimsReceived";
+import EditItem from "./pages/EditItem";
 
 function App() {
   return (
@@ -24,16 +26,71 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/items" element={<Items />} />
         <Route path="/items/:id" element={<ItemDetail />} />
+        <Route path="/items/:id/edit" element={<EditItem />} />
         <Route path="/post/lost" element={<PostItem type="lost" />} />
         <Route path="/post/found" element={<PostItem type="found" />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/my-posts" element={<MyPosts />} />
-        <Route path="/my-claims" element={<MyClaims />} />
-        <Route path="/admin/users" element={<AdminUsers />} />
-        <Route path="/admin/items" element={<AdminItems />} />
-        <Route path="/admin/reports" element={<AdminReports />} />
-        <Route path="/claims-received" element={<ClaimsReceived />}
+        <Route
+  path="/dashboard"
+  element={
+    <ProtectedRoute>
+      <Dashboard />
+    </ProtectedRoute>
+  }
 />
+
+<Route
+  path="/my-posts"
+  element={
+    <ProtectedRoute>
+      <MyPosts />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/my-claims"
+  element={
+    <ProtectedRoute>
+      <MyClaims />
+    </ProtectedRoute>
+  }
+/>
+        <Route
+  path="/admin/users"
+  element={
+    <ProtectedRoute adminOnly>
+      <AdminUsers />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/admin/items"
+  element={
+    <ProtectedRoute adminOnly>
+      <AdminItems />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/admin/reports"
+  element={
+    <ProtectedRoute adminOnly>
+      <AdminReports />
+    </ProtectedRoute>
+  }
+/>
+  <Route
+  path="/claims-received"
+  element={
+    <ProtectedRoute>
+      <ClaimsReceived />
+    </ProtectedRoute>
+  }
+  />
+        
+    
       </Routes>
     </BrowserRouter>
   );

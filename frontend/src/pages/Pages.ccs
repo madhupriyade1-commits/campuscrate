@@ -1,0 +1,233 @@
+/* =========================================
+   CAMPUSCRATE - GENERAL PAGE DESIGN
+   ========================================= */
+
+.page-container {
+  width: 92%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 35px 0 60px;
+}
+
+
+/* PAGE HEADER */
+
+.page-header {
+  margin-bottom: 28px;
+}
+
+.page-header h1 {
+  margin-bottom: 8px;
+}
+
+.page-header p {
+  color: #77716d;
+}
+
+
+/* =========================================
+   CARDS
+   ========================================= */
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e8e1da;
+  border-radius: 14px;
+  padding: 22px;
+
+  box-shadow: var(--shadow);
+}
+
+.card:hover {
+  border-color: #dfd4ca;
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 17px;
+
+  border-radius: 8px;
+  border: 1px solid transparent;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+
+/* PRIMARY RED */
+
+.btn-primary {
+  background: #b91c1c;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: #991b1b;
+}
+
+
+/* SECONDARY */
+
+.btn-secondary {
+  background: #ffffff;
+  color: #4a4542;
+  border-color: #ddd4cc;
+}
+
+.btn-secondary:hover {
+  background: #faf7f4;
+}
+
+
+/* DANGER */
+
+.btn-danger {
+  background: #b91c1c;
+  color: white;
+}
+
+
+/* =========================================
+   FORM DESIGN
+   ========================================= */
+
+.form-container {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+
+  color: #383330;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+
+  padding: 11px 13px;
+
+  background: #ffffff;
+
+  border: 1px solid #ddd5ce;
+  border-radius: 8px;
+
+  color: #383330;
+  font-size: 14px;
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+
+/* =========================================
+   STATUS BADGES
+   ========================================= */
+
+.status {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+  font-weight: 650;
+  text-transform: capitalize;
+}
+
+
+/* ACTIVE = GREEN */
+
+.status-active {
+  background: var(--active-bg);
+  color: var(--active);
+}
+
+
+/* CLAIMED = ORANGE */
+
+.status-claimed {
+  background: var(--claimed-bg);
+  color: var(--claimed);
+}
+
+
+/* RETURNED = BLUE */
+
+.status-returned {
+  background: var(--returned-bg);
+  color: var(--returned);
+}
+
+
+/* =========================================
+   EMPTY STATES
+   ========================================= */
+
+.empty-state {
+  background: #ffffff;
+
+  border: 1px dashed #dcd3cb;
+  border-radius: 14px;
+
+  padding: 50px 25px;
+
+  text-align: center;
+
+  color: #77716d;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 700px) {
+  .page-container {
+    width: 94%;
+    padding-top: 25px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .card {
+    padding: 17px;
+  }
+}

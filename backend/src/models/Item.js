@@ -7,6 +7,11 @@ const itemSchema = new mongoose.Schema(
       enum: ["lost", "found"],
       required: true,
     },
+      
+    photoUrl: {
+    type: String,
+    default: "",
+    },
 
     title: {
       type: String,
@@ -43,9 +48,9 @@ const itemSchema = new mongoose.Schema(
     },
 
     status: {
-      type: String,
-      enum: ["active", "claimed", "returned"],
-      default: "active",
+    type: String,
+    enum: ["active", "claimed", "returned"],
+    default: "active",
     },
 
     postedBy: {

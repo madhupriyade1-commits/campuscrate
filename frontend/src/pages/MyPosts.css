@@ -1,0 +1,432 @@
+/* ============================= */
+/* MY POSTS PAGE */
+/* ============================= */
+
+.my-posts-page {
+  width: 92%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 45px 0 70px;
+}
+
+
+/* ============================= */
+/* PAGE HEADER */
+/* ============================= */
+
+.my-posts-header {
+  margin-bottom: 32px;
+}
+
+.my-posts-header h1 {
+  margin: 0 0 8px;
+  color: #211e1c;
+  font-size: 42px;
+  font-weight: 650;
+  letter-spacing: -1px;
+}
+
+.my-posts-header p {
+  margin: 0;
+  color: #77716d;
+  font-size: 16px;
+}
+
+
+/* ============================= */
+/* THREE COLUMN GRID */
+/* ============================= */
+
+.my-posts-grid {
+  display: grid;
+
+  /* THREE CARDS SIDE BY SIDE */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+
+/* ============================= */
+/* POST CARD */
+/* ============================= */
+
+.my-post-card {
+  min-width: 0;
+
+  background: #ffffff;
+
+  border: 1px solid #e8e1da;
+  border-radius: 15px;
+
+  overflow: hidden;
+
+  box-shadow: var(--shadow);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.my-post-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    rgba(60, 45, 35, 0.12) 0 12px 25px -5px,
+    rgba(60, 45, 35, 0.05) 0 5px 10px -3px;
+}
+
+
+/* ============================= */
+/* POST IMAGE */
+/* ============================= */
+
+.my-post-image {
+  width: 100%;
+  height: 210px;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  background: #f5f1ed;
+}
+
+
+/* ============================= */
+/* NO IMAGE */
+/* ============================= */
+
+.my-post-no-image {
+  width: 100%;
+  height: 210px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f5f1ed;
+
+  color: #8a817b;
+
+  font-size: 14px;
+}
+
+
+/* ============================= */
+/* CARD CONTENT */
+/* ============================= */
+
+.my-post-card-content {
+  padding: 20px;
+}
+
+
+/* ============================= */
+/* LOST / FOUND LABEL */
+/* ============================= */
+
+.my-post-type {
+  display: inline-block;
+
+  margin-bottom: 9px;
+
+  padding: 5px 9px;
+
+  border-radius: 6px;
+
+  background: #fdf0f0;
+
+  color: #b91c1c;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+
+/* ============================= */
+/* TITLE */
+/* ============================= */
+
+.my-post-card h2 {
+  margin: 0 0 17px;
+
+  color: #211e1c;
+
+  font-size: 21px;
+  font-weight: 650;
+
+  line-height: 1.25;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* ============================= */
+/* INFORMATION */
+/* ============================= */
+
+.my-post-card-content > p {
+  margin: 9px 0;
+
+  color: #706963;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.my-post-card-content strong {
+  color: #211e1c;
+}
+
+
+/* ============================= */
+/* STATUS */
+/* ============================= */
+
+.my-post-status {
+  display: inline-block;
+
+  margin-left: 4px;
+
+  padding: 4px 8px;
+
+  border-radius: 6px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: capitalize;
+}
+
+
+/* ACTIVE = GREEN */
+
+.my-post-status.active {
+  background: #edf6f0;
+  color: #3f7d58;
+}
+
+
+/* CLAIMED = ORANGE */
+
+.my-post-status.claimed {
+  background: #fff5e8;
+  color: #c47a20;
+}
+
+
+/* RETURNED = BLUE */
+
+.my-post-status.returned {
+  background: #edf4fb;
+  color: #3b6ea8;
+}
+
+
+/* ============================= */
+/* BUTTON AREA */
+/* ============================= */
+
+.my-post-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  flex-wrap: wrap;
+
+  margin-top: 20px;
+
+  padding-top: 17px;
+
+  border-top: 1px solid #eee6df;
+}
+
+
+/* ============================= */
+/* ALL ACTION BUTTONS */
+/* ============================= */
+
+.my-post-actions a,
+.my-post-actions button {
+  padding: 8px 11px;
+
+  border-radius: 7px;
+
+  font-family: inherit;
+
+  font-size: 12px;
+  font-weight: 650;
+
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+
+/* ============================= */
+/* VIEW DETAILS */
+/* ============================= */
+
+.my-post-view {
+  background: #b91c1c;
+
+  color: white;
+
+  border: 1px solid #b91c1c;
+}
+
+.my-post-view:hover {
+  background: #991b1b;
+}
+
+
+/* ============================= */
+/* EDIT */
+/* ============================= */
+
+.my-post-edit {
+  background: white;
+
+  color: #b91c1c;
+
+  border: 1px solid #d9c8c0;
+}
+
+.my-post-edit:hover {
+  background: #fff7f5;
+}
+
+
+/* ============================= */
+/* DELETE */
+/* ============================= */
+
+.my-post-delete {
+  background: white;
+
+  color: #b91c1c;
+
+  border: 1px solid #e2c7c7;
+}
+
+.my-post-delete:hover {
+  background: #fff3f3;
+}
+
+
+/* ============================= */
+/* EMPTY STATE */
+/* ============================= */
+
+.my-posts-empty {
+  padding: 70px 30px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px dashed #d9cec6;
+
+  border-radius: 15px;
+}
+
+.my-posts-empty h2 {
+  margin: 0 0 8px;
+
+  color: #211e1c;
+}
+
+.my-posts-empty p {
+  margin: 0 0 22px;
+
+  color: #77716d;
+}
+
+
+/* EMPTY STATE BUTTONS */
+
+.my-posts-empty-actions {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
+
+.my-posts-empty-actions a {
+  padding: 10px 16px;
+
+  border-radius: 8px;
+
+  background: #b91c1c;
+
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.my-posts-empty-actions a:hover {
+  background: #991b1b;
+}
+
+
+/* ============================= */
+/* TABLET */
+/* ============================= */
+
+@media (max-width: 950px) {
+
+  .my-posts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* ============================= */
+/* PHONE */
+/* ============================= */
+
+@media (max-width: 600px) {
+
+  .my-posts-page {
+    width: 90%;
+    padding-top: 30px;
+  }
+
+  .my-posts-header h1 {
+    font-size: 34px;
+  }
+
+  .my-posts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .my-post-image,
+  .my-post-no-image {
+    height: 220px;
+  }
+
+  .my-post-actions {
+    align-items: stretch;
+  }
+
+  .my-post-actions a,
+  .my-post-actions button {
+    text-align: center;
+  }
+
+}

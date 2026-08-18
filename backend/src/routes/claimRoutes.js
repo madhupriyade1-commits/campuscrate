@@ -25,14 +25,21 @@ router.post("/", protect, async (req, res) => {
       });
     }
 
-    // You cannot claim your own post
+    // Cannot claim an already claimed or returned item
+    if (item.status === "claimed" || item.status === "returned") {
+      return res.status(400).json({
+        message: "This item is no longer available for claims",
+      });
+    }
+
+    // Cannot claim your own post
     if (item.postedBy.toString() === req.user._id.toString()) {
       return res.status(400).json({
         message: "You cannot claim your own item",
       });
     }
 
-    // Check whether this user has already claimed this item
+    // Check if this user has already claimed this item
     const existingClaim = await Claim.findOne({
       item: itemId,
       claimant: req.user._id,
@@ -53,12 +60,15 @@ router.post("/", protect, async (req, res) => {
     res.status(201).json(claim);
   } catch (error) {
     console.error(error);
+
     res.status(500).json({
       message: "Failed to submit claim",
     });
   }
 });
 
+// GET /api/claims/my
+// Get claims submitted by logged-in user
 router.get("/my", protect, async (req, res) => {
   try {
     const claims = await Claim.find({
@@ -70,13 +80,15 @@ router.get("/my", protect, async (req, res) => {
     res.json(claims);
   } catch (error) {
     console.error(error);
+
     res.status(500).json({
       message: "Failed to fetch your claims",
     });
   }
 });
+
 // GET /api/claims/received
-// Get claims made on items posted by the logged-in user
+// Get claims made on items posted by logged-in user
 router.get("/received", protect, async (req, res) => {
   try {
     const items = await Item.find({
@@ -95,11 +107,15 @@ router.get("/received", protect, async (req, res) => {
     res.json(claims);
   } catch (error) {
     console.error(error);
+
     res.status(500).json({
       message: "Failed to fetch received claims",
     });
   }
 });
+
+// PATCH /api/claims/:id
+// Approve or reject a claim
 router.patch("/:id", protect, async (req, res) => {
   try {
     const { status } = req.body;
@@ -127,16 +143,34 @@ router.patch("/:id", protect, async (req, res) => {
       });
     }
 
+    // Update claim status
     claim.status = status;
-
     await claim.save();
 
-    res.json(claim);
+    // Update item status
+    if (status === "approved") {
+      claim.item.status = "claimed";
+      await claim.item.save();
+    }
+
+    if (status === "rejected") {
+      claim.item.status = "active";
+      await claim.item.save();
+    }
+
+    // Return updated claim
+    const updatedClaim = await Claim.findById(claim._id)
+      .populate("item")
+      .populate("claimant", "name email");
+
+    res.json(updatedClaim);
   } catch (error) {
     console.error(error);
+
     res.status(500).json({
       message: "Failed to update claim",
     });
   }
 });
+
 module.exports = router;

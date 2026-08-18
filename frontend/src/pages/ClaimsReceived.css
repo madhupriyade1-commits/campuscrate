@@ -1,0 +1,398 @@
+/* ================================
+   CLAIMS RECEIVED PAGE
+================================ */
+
+.claims-received-page {
+  width: 92%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 35px 0 60px;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.claims-received-header {
+  margin-bottom: 30px;
+}
+
+.claims-received-header h1 {
+  margin: 0 0 7px;
+  color: #211e1c;
+}
+
+.claims-received-header p {
+  margin: 0;
+  color: #77716d;
+}
+
+
+/* ================================
+   THREE-COLUMN GRID
+================================ */
+
+.claims-received-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+
+/* ================================
+   CARD
+================================ */
+
+.received-claim-card {
+  background: #ffffff;
+  border: 1px solid #e8e1da;
+  border-radius: 15px;
+  overflow: hidden;
+
+  box-shadow: var(--shadow);
+
+  min-width: 0;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.received-claim-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    rgba(60, 45, 35, 0.12) 0 12px 25px -6px;
+}
+
+
+/* ================================
+   IMAGE
+================================ */
+
+.received-claim-image,
+.received-claim-no-image {
+  width: 100%;
+  height: 210px;
+  display: block;
+}
+
+.received-claim-image {
+  object-fit: cover;
+}
+
+.received-claim-no-image {
+  background: #f4f0ec;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #8a817b;
+  font-size: 14px;
+}
+
+
+/* ================================
+   CONTENT
+================================ */
+
+.received-claim-content {
+  padding: 20px;
+}
+
+
+/* ================================
+   TITLE + STATUS
+================================ */
+
+.received-claim-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+}
+
+.received-claim-top h2 {
+  margin: 0;
+
+  color: #211e1c;
+
+  font-size: 20px;
+  line-height: 1.25;
+
+  min-width: 0;
+}
+
+
+/* ================================
+   CLAIM STATUS
+================================ */
+
+.received-claim-status {
+  flex-shrink: 0;
+
+  padding: 5px 9px;
+
+  border-radius: 6px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: capitalize;
+}
+
+
+/* PENDING */
+
+.received-claim-status.status-pending {
+  background: #fff5e8;
+  color: #c47a20;
+}
+
+
+/* APPROVED */
+
+.received-claim-status.status-approved {
+  background: #edf6f0;
+  color: #3f7d58;
+}
+
+
+/* REJECTED */
+
+.received-claim-status.status-rejected {
+  background: #fdf0f0;
+  color: #b91c1c;
+}
+
+
+/* ================================
+   DETAILS
+================================ */
+
+.received-claim-details {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+}
+
+.received-claim-details p {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+
+  margin: 0;
+
+  min-width: 0;
+}
+
+.received-claim-details strong {
+  color: #96909d;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.received-claim-details span {
+  color: #4a4542;
+
+  font-size: 14px;
+  line-height: 1.45;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* ================================
+   ACTION BUTTONS
+================================ */
+
+.claim-actions {
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 5px;
+}
+
+.claim-actions button {
+  flex: 1;
+
+  padding: 10px 12px;
+
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+/* APPROVE */
+
+.approve-button {
+  background: #3f7d58;
+  color: white;
+
+  border: 1px solid #3f7d58;
+}
+
+.approve-button:hover {
+  background: #326446;
+}
+
+
+/* REJECT */
+
+.reject-button {
+  background: white;
+  color: #b91c1c;
+
+  border: 1px solid #e2c7c7;
+}
+
+.reject-button:hover {
+  background: #fff3f3;
+}
+
+
+/* ================================
+   MARK AS RETURNED
+================================ */
+
+.returned-button {
+  width: 100%;
+
+  padding: 10px 14px;
+
+  border-radius: 8px;
+
+  background: #3b6ea8;
+  color: white;
+
+  border: 1px solid #3b6ea8;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.returned-button:hover {
+  background: #315d8e;
+}
+
+
+/* ================================
+   RETURNED MESSAGE
+================================ */
+
+.returned-message {
+  width: 100%;
+
+  padding: 10px 14px;
+
+  box-sizing: border-box;
+
+  border-radius: 8px;
+
+  background: #edf4fb;
+  color: #3b6ea8;
+
+  text-align: center;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* ================================
+   EMPTY STATE
+================================ */
+
+.claims-received-empty {
+  background: #ffffff;
+
+  border: 1px dashed #d9cfc7;
+  border-radius: 15px;
+
+  padding: 65px 30px;
+
+  text-align: center;
+}
+
+.claims-received-empty h2 {
+  margin: 0 0 8px;
+  color: #211e1c;
+}
+
+.claims-received-empty p {
+  margin: 0;
+  color: #77716d;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 950px) {
+  .claims-received-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+  .claims-received-page {
+    width: 90%;
+    padding-top: 25px;
+  }
+
+  .claims-received-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .received-claim-image,
+  .received-claim-no-image {
+    height: 220px;
+  }
+
+  .received-claim-top {
+    flex-direction: column;
+  }
+
+  .received-claim-status {
+    align-self: flex-start;
+  }
+
+  .claim-actions {
+    flex-direction: column;
+  }
+}
+

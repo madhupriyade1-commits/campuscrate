@@ -17,6 +17,8 @@ app.get("/api/health", (req, res) => {
 // (more routes get mounted here as you build them, e.g.:)
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/items", require("./routes/itemRoutes"));
+app.use("/api/users", require("./routes/userRoutes"));
+app.use("/api/reports", require("./routes/reportRoutes"));
 app.use("/api/claims", require("./routes/claimRoutes"));
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
