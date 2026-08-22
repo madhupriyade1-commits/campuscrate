@@ -22,7 +22,7 @@ function EditItem() {
     const fetchItem = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/items/${id}`
+          `https://campuscrate-t5ls.onrender.com/api/items/${id}`
         );
 
         if (!response.ok) {
@@ -66,7 +66,7 @@ function EditItem() {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        `http://localhost:5000/api/items/${id}`,
+        `https://campuscrate-t5ls.onrender.com/api/items/${id}`,
         {
           method: "PATCH",
           headers: {

@@ -12,7 +12,7 @@ function AdminReports() {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        "http://localhost:5000/api/reports",
+        "https://campuscrate-t5ls.onrender.com/api/reports",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -49,7 +49,7 @@ function AdminReports() {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        `http://localhost:5000/api/reports/${id}`,
+        `https://campuscrate-t5ls.onrender.com/api/reports/${id}`,
         {
           method: "PATCH",
           headers: {

@@ -11,7 +11,7 @@ function AdminUsers() {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        "http://localhost:5000/api/users",
+        "https://campuscrate-t5ls.onrender.com/api/users",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -49,7 +49,7 @@ const handleToggleBlock = async (id, currentlyBlocked) => {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-      `http://localhost:5000/api/users/${id}`,
+      `https://campuscrate-t5ls.onrender.com/api/users/${id}`,
       {
         method: "PATCH",
         headers: {

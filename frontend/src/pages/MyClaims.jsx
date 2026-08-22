@@ -17,7 +17,7 @@ function MyClaims() {
       }
 
       const response = await fetch(
-        "http://localhost:5000/api/claims/my",
+        "https://campuscrate-t5ls.onrender.com/api/claims/my",
         {
           headers: {
             Authorization: `Bearer ${token}`,

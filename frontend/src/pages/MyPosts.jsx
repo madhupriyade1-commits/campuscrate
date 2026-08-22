@@ -18,7 +18,7 @@ function MyPosts() {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        `http://localhost:5000/api/items/${id}`,
+        `https://campuscrate-t5ls.onrender.com/api/items/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -46,7 +46,7 @@ function MyPosts() {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-          "http://localhost:5000/api/items/my",
+          "https://campuscrate-t5ls.onrender.com/api/items/my",
           {
             headers: {
               Authorization: `Bearer ${token}`,

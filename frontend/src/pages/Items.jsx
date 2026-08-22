@@ -1,6 +1,7 @@
 import "./Items.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import api from "../api/axios";
 
 function Items() {
   const [items, setItems] = useState([]);
@@ -29,16 +30,11 @@ function Items() {
         params.append("q", search.trim());
       }
 
-      const response = await fetch(
-        `http://localhost:5000/api/items?${params.toString()}`
+      const response = await api.get(
+     `/items?${params.toString()}`
       );
 
-      if (!response.ok) {
-        throw new Error("Failed to load items");
-      }
-
-      const data = await response.json();
-      setItems(data);
+setItems(response.data);
     } catch (err) {
       console.error(err);
       setError("Failed to load items.");

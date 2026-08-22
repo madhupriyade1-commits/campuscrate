@@ -29,7 +29,7 @@ function ItemDetail() {
     const fetchItem = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/items/${id}`
+          `https://campuscrate-t5ls.onrender.com/api/items/${id}`
         );
 
         if (!response.ok) {
@@ -69,7 +69,7 @@ function ItemDetail() {
       }
 
       const response = await fetch(
-        "http://localhost:5000/api/claims",
+        "https://campuscrate-t5ls.onrender.com/api/claims",
         {
           method: "POST",
           headers: {
@@ -121,7 +121,7 @@ function ItemDetail() {
       }
 
       const response = await fetch(
-        `http://localhost:5000/api/items/${item._id}`,
+        `https://campuscrate-t5ls.onrender.com/api/items/${item._id}`,
         {
           method: "PATCH",
           headers: {
@@ -171,7 +171,7 @@ function ItemDetail() {
       }
 
       const response = await fetch(
-        "http://localhost:5000/api/reports",
+        "https://campuscrate-t5ls.onrender.com/api/reports",
         {
           method: "POST",
           headers: {

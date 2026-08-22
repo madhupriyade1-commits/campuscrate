@@ -18,13 +18,13 @@ function Dashboard() {
         const token = localStorage.getItem("token");
 
         const [postsResponse, claimsResponse] = await Promise.all([
-          fetch("http://localhost:5000/api/items/my", {
+          fetch("https://campuscrate-t5ls.onrender.com/api/items/my", {
             headers: {
               Authorization: `Bearer ${token}`,
             },
           }),
 
-          fetch("http://localhost:5000/api/claims/my", {
+          fetch("https://campuscrate-t5ls.onrender.com/api/claims/my", {
             headers: {
               Authorization: `Bearer ${token}`,
             },

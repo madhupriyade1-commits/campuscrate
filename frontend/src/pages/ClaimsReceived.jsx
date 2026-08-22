@@ -17,7 +17,7 @@ function ClaimsReceived() {
       }
 
       const response = await fetch(
-        "http://localhost:5000/api/claims/received",
+        "https://campuscrate-t5ls.onrender.com/api/claims/received",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -52,7 +52,7 @@ function ClaimsReceived() {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        `http://localhost:5000/api/claims/${claimId}`,
+        `https://campuscrate-t5ls.onrender.com/api/claims/${claimId}`,
         {
           method: "PATCH",
           headers: {
@@ -95,7 +95,7 @@ function ClaimsReceived() {
       }
 
       const response = await fetch(
-        `http://localhost:5000/api/items/${itemId}`,
+        `https://campuscrate-t5ls.onrender.com/api/items/${itemId}`,
         {
           method: "PATCH",
           headers: {
